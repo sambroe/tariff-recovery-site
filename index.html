@@ -525,24 +525,26 @@
     <h2>Get Your Free Assessment</h2>
     <p class="form-subhead">Tell us about your business. We'll review your situation and respond within 24 hours — at no cost to you.</p>
 
-    <form id="leadForm">
+    <form id="leadForm" name="contact" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
       <div class="form-row">
         <div>
           <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="Jane Smith" required>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required>
         </div>
         <div>
           <label for="company">Company Name</label>
-          <input type="text" id="company" placeholder="Acme Corp" required>
+          <input type="text" id="company" name="company" placeholder="Acme Corp" required>
         </div>
       </div>
       <div>
         <label for="email">Work Email</label>
-        <input type="email" id="email" placeholder="jane@company.com" required>
+        <input type="email" id="email" name="email" placeholder="jane@company.com" required>
       </div>
       <div>
         <label for="volume">Estimated Annual Import Volume</label>
-        <select id="volume" required>
+        <select id="volume" name="volume" required>
           <option value="" disabled selected>Select range...</option>
           <option>Under $1 million</option>
           <option>$1M – $10M</option>
@@ -570,10 +572,41 @@
   </footer>
 
   <script>
+    function encode(data) {
+      return Object.keys(data)
+        .map(function(key) {
+          return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
+        })
+        .join('&');
+    }
+
     document.getElementById('leadForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      document.getElementById('leadForm').style.display = 'none';
-      document.getElementById('thankYou').style.display = 'block';
+      var form = e.target;
+      var btn = form.querySelector('.submit-btn');
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': 'contact',
+          'name': form.querySelector('#name').value,
+          'company': form.querySelector('#company').value,
+          'email': form.querySelector('#email').value,
+          'volume': form.querySelector('#volume').value,
+        })
+      })
+      .then(function() {
+        document.getElementById('leadForm').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      })
+      .catch(function() {
+        // Still show thank you even if fetch fails (graceful degradation)
+        document.getElementById('leadForm').style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      });
     });
 
     document.querySelectorAll('a[href="#assess"]').forEach(function(link) {
