@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tariff Recovery Partners — Recover Your IEEPA Tariff Refunds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a1628;
+      --navy-light: #112240;
+      --gold: #d4a843;
+      --gold-light: #f0c96e;
+      --white: #ffffff;
+      --gray: #6b7280;
+      --light-gray: #f9fafb;
+      --border: #e5e7eb;
+      --text: #111827;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--navy);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      padding: 80px 5% 90px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(212, 168, 67, 0.15);
+      border: 1px solid rgba(212, 168, 67, 0.4);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      max-width: 780px;
+      margin: 0 auto 24px;
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero p {
+      color: rgba(255,255,255,0.75);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      max-width: 620px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 16px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(212,168,67,0.35);
+    }
+
+    .hero-cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 28px rgba(212,168,67,0.45);
+    }
+
+    .hero-note {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+    }
+
+    /* URGENCY BAR */
+    .urgency-bar {
+      background: var(--gold);
+      padding: 14px 5%;
+      text-align: center;
+    }
+
+    .urgency-bar p {
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    /* STATS */
+    .stats {
+      background: var(--white);
+      padding: 60px 5%;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .stat-number span { color: var(--gold); }
+
+    .stat-label {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    /* HOW IT WORKS */
+    .how {
+      background: var(--light-gray);
+      padding: 80px 5%;
+    }
+
+    .section-label {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin-bottom: 56px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .step {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 36px 32px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .step h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* WHO QUALIFIES */
+    .qualifies {
+      padding: 80px 5%;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .qualifies-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    @media (max-width: 680px) {
+      .qualifies-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .qualifies h2 { text-align: left; margin-bottom: 20px; }
+    .qualifies .section-label { text-align: left; }
+
+    .qualifies p {
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .industry-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      background: var(--light-gray);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+
+    /* FORM */
+    .form-section {
+      background: var(--navy);
+      padding: 80px 5%;
+    }
+
+    .form-section h2 { color: var(--white); margin-bottom: 12px; }
+    .form-section .section-label { margin-bottom: 14px; }
+
+    .form-subhead {
+      text-align: center;
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      margin-bottom: 48px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    form {
+      max-width: 560px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 520px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 6px;
+    }
+
+    input, select {
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 13px 16px;
+      font-size: 0.95rem;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    input::placeholder { color: rgba(255,255,255,0.35); }
+
+    input:focus, select:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.12);
+    }
+
+    select option { background: var(--navy-light); color: var(--white); }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      margin-top: 8px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(212,168,67,0.3);
+    }
+
+    .submit-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .form-disclaimer {
+      text-align: center;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.8rem;
+      margin-top: 12px;
+    }
+
+    /* THANK YOU */
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 48px 24px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .thank-you-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .thank-you h3 {
+      color: var(--white);
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .thank-you p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #060e1a;
+      padding: 28px 5%;
+      text-align: center;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+
+    footer strong { color: rgba(255,255,255,0.6); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Tariff Recovery <span>Partners</span></div>
+    <a href="#assess" class="nav-cta">Get Free Assessment</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">🚨 Breaking: Supreme Court Rules IEEPA Tariffs Unconstitutional</div>
+    <h1>You Paid <span>Unconstitutional</span> Tariffs.<br>We Get Your Money Back.</h1>
+    <p>The Supreme Court just struck down Trump's IEEPA tariffs. Businesses that imported goods in 2025–2026 may be owed significant refunds. We recover them on contingency — you pay nothing unless we collect.</p>
+    <a href="#assess" class="hero-cta">See If You Qualify →</a>
+    <p class="hero-note">No upfront cost · No recovery, no fee · Free assessment in 24 hours</p>
+  </section>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    <p>⚠️ The 180-day CBP protest window is already ticking — claims filed after the deadline are forfeit. Don't wait.</p>
+  </div>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-number"><span>$</span>150<span>B</span></div>
+        <div class="stat-label">Estimated refunds owed to US businesses</div>
+      </div>
+      <div>
+        <div class="stat-number">180</div>
+        <div class="stat-label">Days to file from each import entry date</div>
+      </div>
+      <div>
+        <div class="stat-number"><span>0</span>%</div>
+        <div class="stat-label">Upfront cost to you</div>
+      </div>
+      <div>
+        <div class="stat-number">75<span>-85</span>%</div>
+        <div class="stat-label">Of your refund you keep</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="section-label">How it works</div>
+    <h2>Three Steps to Your Refund</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Free Assessment</h3>
+        <p>We review your import records at no cost to determine your eligibility and estimate the refund you're owed.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>We File With CBP</h3>
+        <p>Our licensed customs experts file protests with US Customs and Border Protection on your behalf, before the deadline.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>You Collect</h3>
+        <p>We recover your refund. You keep 75–85% of everything recovered. We only get paid when you do.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO QUALIFIES -->
+  <section>
+    <div class="qualifies">
+      <div class="qualifies-inner">
+        <div>
+          <div class="section-label">Who qualifies</div>
+          <h2>Is Your Business Eligible?</h2>
+          <p>If you imported goods subject to IEEPA tariffs during 2025–2026, you likely overpaid. The Supreme Court's 6-3 ruling means those tariffs were unconstitutional — and you have a right to a refund.</p>
+          <p>The filing window is limited. Early movers recover the most.</p>
+          <a href="#assess" class="nav-cta" style="display:inline-block; background:var(--navy); color:var(--white); margin-top:8px;">Check My Eligibility →</a>
+        </div>
+        <div>
+          <p style="font-weight:700; color:var(--navy); margin-bottom:16px;">Industries most impacted:</p>
+          <div class="industry-tags">
+            <span class="tag">Retail</span>
+            <span class="tag">Electronics</span>
+            <span class="tag">Auto Parts</span>
+            <span class="tag">Apparel & Textiles</span>
+            <span class="tag">Consumer Goods</span>
+            <span class="tag">Manufacturing</span>
+            <span class="tag">Industrial Equipment</span>
+            <span class="tag">Home Goods</span>
+            <span class="tag">Medical Devices</span>
+            <span class="tag">Chemicals</span>
+          </div>
+          <p style="margin-top:24px; font-size:0.875rem; color:var(--gray);">If your business imported any goods subject to IEEPA-based tariffs from China or globally in 2025–2026, you may qualify regardless of industry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section" id="assess">
+    <div class="section-label">Get started</div>
+    <h2>Get Your Free Assessment</h2>
+    <p class="form-subhead">Tell us about your business. We'll review your situation and respond within 24 hours — at no cost to you.</p>
+
+    <form id="leadForm">
+      <div class="form-row">
+        <div>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Jane Smith" required>
+        </div>
+        <div>
+          <label for="company">Company Name</label>
+          <input type="text" id="company" placeholder="Acme Corp" required>
+        </div>
+      </div>
+      <div>
+        <label for="email">Work Email</label>
+        <input type="email" id="email" placeholder="jane@company.com" required>
+      </div>
+      <div>
+        <label for="volume">Estimated Annual Import Volume</label>
+        <select id="volume" required>
+          <option value="" disabled selected>Select range...</option>
+          <option>Under $1 million</option>
+          <option>$1M – $10M</option>
+          <option>$10M – $50M</option>
+          <option>$50M – $250M</option>
+          <option>$250M+</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Get My Free Assessment →</button>
+      <p class="form-disclaimer">No obligation. No upfront cost. We only get paid if you recover money.</p>
+    </form>
+
+    <div class="thank-you" id="thankYou">
+      <div class="thank-you-icon">✅</div>
+      <h3>You're on the list.</h3>
+      <p>We'll review your situation and reach out within 24 hours with a preliminary assessment. The clock is ticking — we're moving fast.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>Tariff Recovery Partners</strong><br>
+    Acting fast is critical — the CBP protest window closes 180 days from each import entry date.<br>
+    © 2026 Tariff Recovery Partners. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('leadForm').style.display = 'none';
+      document.getElementById('thankYou').style.display = 'block';
+    });
+
+    document.querySelectorAll('a[href="#assess"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('assess').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
