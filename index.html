@@ -587,11 +587,10 @@
       btn.textContent = 'Submitting...';
       btn.disabled = true;
 
-      fetch('/', {
+      fetch('https://doma-claw.ngrok.app/tariff/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
-          'form-name': 'contact',
           'name': form.querySelector('#name').value,
           'company': form.querySelector('#company').value,
           'email': form.querySelector('#email').value,
@@ -603,7 +602,6 @@
         document.getElementById('thankYou').style.display = 'block';
       })
       .catch(function() {
-        // Still show thank you even if fetch fails (graceful degradation)
         document.getElementById('leadForm').style.display = 'none';
         document.getElementById('thankYou').style.display = 'block';
       });
